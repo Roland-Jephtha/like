@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/smartbanner/smartbanner.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="apple-mobile-web-app-title" content="Lighter" />
+
+    <!-- Safari Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6752246796, app-argument=https://app.lighter.xyz/">
+
+    <!-- Basic Open Graph tags -->
+    <meta property="og:title" content="Lighter" />
+    <meta property="og:description" content="Lighter - Trade perpetuals with unmatched efficiency and security" />
+    <meta property="og:image" content="/LighterOG.png" />
+    <meta property="og:url" content="https://lighter.xyz" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Lighter" />
+    <meta name="twitter:description" content="Lighter - Trade perpetuals with unmatched efficiency and security" />
+    <meta name="twitter:image" content="https://lighter-frontend.s3.us-west-2.amazonaws.com/LighterOG.png" />
+
+    <!-- Start SmartBanner configuration -->
+    <meta name="smartbanner:title" content="Lighter">
+    <meta name="smartbanner:price" content="Available ">
+    <meta name="smartbanner:price-suffix-apple" content=" - On the App Store">
+    <meta name="smartbanner:price-suffix-google" content=" - In Google Play">
+    <meta name="smartbanner:icon-apple" content="/ios-icon.png">
+    <meta name="smartbanner:icon-google" content="/android-icon.png">
+    <meta name="smartbanner:button" content="Open">
+    <meta name="smartbanner:button-url-apple" content="https://apps.apple.com/us/app/lighter-mobile/id6752246796">
+    <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.zklighter.app">
+    <meta name="smartbanner:enabled-platforms" content="android,ios">
+    <meta name="smartbanner:hide-path" content="/">
+
+    <!-- End SmartBanner configuration -->
+
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Lighter Exchange" />
+    <title>Lighter</title>
+    <meta name="description" content="Lighter - Trade perpetuals with unmatched efficiency and security">
+
+    <script>
+        window.global = window
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-C_7YoBde.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CFIG0l__.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-ui-web3-eRcc0gXJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-utils-BPbhm9PU.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-zklighter-CvMjegap.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-charts-BNlTpDlt.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DF2yC-vV.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // Only load SmartBanner if not Safari on iOS (Safari has its own native banner)
+        (function() {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            // Safari on iOS has "Version/" and does NOT have "CriOS" (Chrome) or "FxiOS" (Firefox)
+            const isSafari = isIOS && /Version\//.test(ua) && !/CriOS|FxiOS/.test(ua);
+            const isBrave = /Brave/.test(ua) || navigator.brave !== undefined;
+
+            // If Brave or Safari, don't load SmartBanner
+            if (isBrave || isSafari) {
+                return
+            }
+
+            // Load SmartBanner if: Android OR iOS but not Safari (Chrome/Firefox on iOS should load it)
+            if (!isIOS || (isIOS && !isSafari)) {
+                const script = document.createElement('script');
+                script.src = '/smartbanner/smartbanner.min.js';
+                document.body.appendChild(script);
+            }
+        })();
+    </script>
+</body>
+
+</html>
