@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+  font-weight: 500;
+  outline: none;
+}
+
+.theme-dark:root {
+  --tv-color-item-active-text: #1f1f1f;
+  --tv-color-toolbar-toggle-button-background-active: #e0e0e0;
+  --tv-color-toolbar-toggle-button-background-active-hover: #f8f8f8;
+  --color-border-grey: #334155;
+  --ui-lib-intent-color: var(--color-border-grey);
+  --tv-color-pane-background: #121218;
+  --tv-color-platform-background: #121218;
+  --tv-color-toolbar-background: #121218;
+  --tv-color-toolbar-button-background-expanded: rgba(255, 255, 255, 0.05);
+}
+
+.trading-view-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* data-name layouts-list only show first 3 items */
+[data-name="layouts-list"] > div:nth-child(n+4) {
+  display: none;
+}
