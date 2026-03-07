@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <script>(function(){var r=sessionStorage.getItem('redirect');if(r){sessionStorage.removeItem('redirect');history.replaceState(null,'',r);}else if(window.location.pathname!=='/trade/LIT/'){history.replaceState(null,'','/trade/LIT/');}})();</script>
+    <script>(function(){var r=sessionStorage.getItem('redirect');if(r){sessionStorage.removeItem('redirect');history.replaceState(null,'',r);}else if(!window.location.pathname.match(/\/trade\/LIT\/?$/)){var base=window.location.pathname.replace(/\/[^\/]*$/,'');history.replaceState(null,'',base+'/trade/LIT/');}})();</script>
     <!-- Import all CSS files -->
     <link rel="stylesheet" href="/smartbanner/smartbanner.min.css">
     <link rel="stylesheet" href="/assets/index-BuR0JRfG.css">
