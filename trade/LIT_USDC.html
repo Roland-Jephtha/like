@@ -85,7 +85,7 @@
             // Load SmartBanner if: Android OR iOS but not Safari (Chrome/Firefox on iOS should load it)
             if (!isIOS || (isIOS && !isSafari)) {
                 const script = document.createElement('script');
-                script.src = '/smartbanner/smartbanner.min.js';
+                script.src = '/assets/smartbanner.min.js';
                 document.body.appendChild(script);
             }
         })();
